@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body1">
+    <div id="container">
+        <div class="header">Stig Ark</div>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="fotografi.html">Fotografier</a><li>
+                <li><a href="om_meg.html">Om meg</a></li>
+                <li><a href="Kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div id="kontakt">
+                <div class="kontaktinfo">
+                    <h2>Kontakt meg</h2>
+                    <div class="sosialt">
+                        <a href="http://instagram.com/stigark" target="_blank"><img class="ig" src="../Bilder/ig.png"></a>
+
+                        <a href="https://www.facebook.com/stig.ark.1" target="_blank"><img class="fb" src="../Bilder/fb.png"></a>  
+                    </div>
+                </div>
+
+                <!-- Legg til et input skjema her -->
+                <form class="kontaktform">
+                  <label for="fornavn"><b>Fornavn</b></label>
+                  <input type="text" id="fornavn" name="fornavn" placeholder="Navnet ditt..">
+              
+                  <label for="etternavn"><b>Etternavn</b></label>
+                  <input type="text" id="etternavn" name="etternavn" placeholder="Etternavnet ditt..">
+            
+                  <label for="melding"><b>Melding</b></label>
+                  <textarea id="melding" name="melding" placeholder="Skriv her.." style="height:200px"></textarea>
+              
+                  <button id="registrer">Send inn</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer1">© Stig Ark - Laget av Johanna Klemsdal</div>
+    </div>
+
+    <div id="hoved"></div>
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+ 
+     <script src="../script.js"></script>
+
+</body>
+</html>
