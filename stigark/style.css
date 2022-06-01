@@ -1,0 +1,356 @@
+body {
+    margin: 0 auto;
+}
+
+/*.body1 {
+    padding-top: 20px;
+}*/
+
+/* Grid */
+    #container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto, 4);
+        grid-template-areas: 
+                "header header header"
+                "navbar navbar navbar"
+                "main   main   main  "
+                "footer footer footer"
+        ;
+    }
+
+    .header {
+        grid-area: header;
+
+        font-size: 80px;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10px;
+        background-color: rgb(230, 216, 199, 0.6);
+    }
+
+
+    .navbar {
+        grid-area: navbar;
+
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .main {
+        grid-area: main;
+
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .footer {
+        grid-area: footer;
+
+        min-height: 50px;
+        background-color: rgb(92, 153, 153, 0.5);
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .header1 {
+        grid-area: header;
+
+        font-size: 80px;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10px;
+    }
+
+    .footer1 {
+        grid-area: footer;
+
+        position: fixed;
+        bottom: 0;
+        background-color: rgba(92, 153, 153, 0.5);
+        width: 100%;
+        min-height: 50px;
+        text-align: center;
+        padding-top: 15px;
+}
+
+/*navbar*/
+    .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    .navbar li {
+        display: inline-block;
+        margin: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        position: relative; 
+        margin-left: 20px;
+    }
+    
+    .navbar a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: center;
+        margin-right: 30px;
+    }
+
+    .navbar a:hover{ /*når man tar musen over*/
+        color: rgb(124, 31, 31)
+    }
+    
+    .navbar a::before { /*gir streken over*/
+        content: "";
+        display: block;
+        height: 3px;
+        width: 10px;
+        background-color: #3a3b3b;
+    
+        position: absolute;
+        top: 0;
+        width: 0%;
+    }
+
+    .navbar a:hover::before {
+        width:100%;
+}
+
+/* Hjem */
+.bgimage {
+    background-image: url(./Bilder/jorde.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* Fotografier */
+    .fotografi {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: row;
+    }
+
+    .fotografi img {
+        margin: 40px auto;
+        border: 0.5px solid #000;
+        box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
+        max-width: 30vw;
+    }
+
+    .fotografi a {
+    margin: 0 auto;  
+}
+
+/* Om meg */
+    .ommeg {
+        display: flex;
+        max-width: 800px;
+        flex-direction: row;
+        margin: 50px auto;
+    }
+
+    .tekst {
+        max-width: 400px;
+        margin-left: 50px;
+    }
+
+    .bilde {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 10px;
+        margin-top: 20px;
+        background: url(./Bilder/stig.jpeg);
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
+}
+
+/* Kontakt meg */
+    .kontaktform {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-end;
+        padding: 40px;
+    }
+
+    #kontakt {
+        display: flex;
+        flex-direction: row;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0px 20px 0px 0px;
+        width: 100%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .kontaktinfo {
+        padding: 20px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .sosialt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fb {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .ig {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        padding-bottom: 10px;
+}
+
+/* Kontaktskjema */
+    * {box-sizing: border-box;}
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    input[type=submit] {
+        background-color: #3a3b3b;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: rgb(92, 153, 153);
+}
+
+/* Antall besøk, local storage */
+.teller, .nullstill {
+    position: relative;
+    top: -180px;
+    left: 20px;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+
+.nullstill {
+    background-color: rgb(92, 153, 153);
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 10px;
+}
+
+
+/*liten skjerm*/
+@media screen and (max-width:650px) {
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .fotografi {
+            flex-direction: column;
+        }
+        
+    .fotografi img {
+            max-width: 90vw;
+        }
+        
+    .fotografi a {
+            margin: 0 auto;  
+    }
+
+
+    .ommeg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -20px;
+        }
+
+    .bilde {
+        margin: 0 auto;
+    }
+
+
+    #kontakt {
+        flex-direction: column;
+        }
+
+    .kontaktform {
+        margin: 10px;
+        width: 90%;
+        padding: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 508px) {
+    .teller, .nullstill {
+        top: -250px;
+        left: 10px;
+        font-size: 11px;
+    }
+
+    .nullstill {
+        border-radius: 10px;
+        border: 1px solid black;
+        padding: 3px 7px;
+        font-size: 8px;
+    }
+
+    .ommeg {
+        margin-left: -25px;
+        margin-right: 20px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 405px) {
+    .teller, .nullstill {
+        top: -230px;
+        left: 10px;
+        font-size: 11px;
+    }
+
+    .nullstill {
+        border-radius: 10px;
+        border: 1px solid black;
+        padding: 3px 7px;
+        font-size: 8px;
+    }
+
+    .header {
+        font-size: 65px;
+    }
+}
