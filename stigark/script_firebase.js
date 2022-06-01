@@ -1,3 +1,5 @@
+/*Firebase*/
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     // Legg informasjon fra deres firebase her
@@ -15,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 // Lager en referanse til databasen
 let db = firebase.firestore();
 
-// Elementer fra DOM
+// Elementer fra DOM, henter HTML-elementer
 let hovedEl = document.querySelector("#hoved")
 let fornavnEl = document.querySelector("#fornavn")
 let etternavnEl = document.querySelector("#etternavn")
@@ -28,9 +30,10 @@ registrerBtn.addEventListener("click", addUser)
 let collectionName = "brukere"
 
 // Funksjon som legger til ny bruker i databasen
-function addUser(){
-    console.log(fornavnEl.value)
-    console.log(etternavnEl.value)
+function addUser(e){
+    e.preventDefault()
+    // console.log(fornavnEl.value)
+    // console.log(etternavnEl.value)
     db.collection(collectionName).add({
         fornavn: fornavnEl.value,
         etternavn: etternavnEl.value,
@@ -48,7 +51,9 @@ function addUser(){
 }
 
 
-function getUsers(){
+// Dette skriver ut brukeren på selve nettsiden, men trenger ikke det på min nettside, så har derfor kommentert ut koden. 
+
+/* function getUsers(){
     // Henter data. Når dataene er ferdig hentet, starter "then"-biten
     db.collection(collectionName).get().then((snapshot) => {
     //db.collection("brukere").orderBy("alder").get().then((snapshot) => { // sorterer etter alder (yngst til eldst)
@@ -78,18 +83,5 @@ function getUsers(){
         }
     });
 }
+getUsers() */
 
-
-getUsers()
-
-/* Navbar */
-
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
